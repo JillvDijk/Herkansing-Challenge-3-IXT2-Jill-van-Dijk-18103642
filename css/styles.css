@@ -1,0 +1,149 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    background-color: black;
+    font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+    font-size: 30px;
+    height: 100vh;
+    width: 100vw;
+    overflow: hidden;
+}
+
+nav {
+    box-shadow: 0px 0px 20px rgba(0, 0, 0, 0.5);
+    z-index: 10;
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    background-color: black;
+}
+
+.logo {
+    width: 100%;
+    max-width: 200px;
+    display: block;
+}
+
+.tabs {
+    list-style: none;
+    color: white;
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr;
+    text-align: center;
+    grid-gap: 5px;
+
+}
+
+.tabs li {
+   border-bottom: 5px solid transparent; 
+   padding: 10px;
+   cursor: pointer;
+}
+
+.tabs.map-active li:nth-child(1) {
+    border-bottom: 5px solid white;
+}
+
+.tabs.weather-active li:nth-child(2) {
+    border-bottom: 5px solid white;
+}
+
+.tabs.discover-active li:nth-child(3) {
+    border-bottom: 5px solid white;
+}
+
+.tabs-content {
+    width: 300vw;
+    height: 100%;
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr;
+    transition: transform 0.3s ease-in-out;
+}
+
+.tabs-content.map-active {
+    transform: translateX(0);
+}
+
+.tabs-content.weather-active {
+    transform: translateX(-33.33333%);
+}
+
+.tabs-content.discover-active {
+    transform: translateX(-66.66666%);
+}
+
+.tabs-content .tab-map {
+    height: 100%;   
+}
+
+.tabs-content .tab-weather {
+    height: 100%;
+    display: flex;
+    justify-content: center;
+    overflow: hidden;
+}
+
+.tab-discover {
+    display: flex;
+    justify-content: center;
+}
+
+.weatherwidget-io {
+    width: 100%;
+    margin-top: 100px;
+}
+
+.widget_wrap {
+    width: 800px;
+}
+
+#map {
+    width: 100%;
+    height: 100%;
+}
+
+.mapboxgl-ctrl-top-right {
+    top: 70px !important;
+    right: 0 !important;
+    z-index: 1000 !important;
+    display: flex;
+}
+
+.mapboxgl-ctrl-group {
+    padding: 3px !important;
+}
+.mapboxgl-ctrl-geocoder {
+    opacity: 0;
+    transition: opacity 0.3s !important;
+    order: -1;
+}
+.mapboxgl-ctrl-geocoder.active {
+    opacity: 1;
+}
+@media (min-width:1000px) {
+    nav {
+        display: flex;
+        justify-content: center;
+    }
+}
+
+@media (max-width:800px) {
+    .logo {
+        margin: 10px auto;
+    }
+
+    .widget_wrap {
+        width: 100%;
+    }
+}
+
+@media (max-width:500px) {
+    .tabs {
+        font-size: 20px;
+    }
+}
