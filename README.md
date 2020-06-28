@@ -8,3 +8,4 @@ Wanneer de locatie is gevonden, kan de gebruiker dichtbijzijnde zoeken binnen ee
 De gebruiker kan op de locatie-marker klikken om het huidige weer te tonen, namelijk de bewolking en de temperatuur.
 
 Bedankt voor het lezen van deze readme.
+
